@@ -1,0 +1,38 @@
+from random import randint
+t = ["stone","paper","scissors"]
+n=1;c=0;p=0
+computer = t[randint(0,2)]
+print("\nWELCOME!! LET'S PLAY STONE, PAPER AND SCISSORS")
+
+pt=int(input(("\nEnter the Maximum Points you want to play for: ")))
+while True:
+    computer = t[randint(0, 2)]
+    player = input("Enter Anyone among the three: stone, paper, scissors: ")
+    if (player == computer):
+        print("Points of Computer =",c,"Points of User =", p)
+    elif (player == "stone"):
+        if (computer == "paper"):
+            c+=1
+        else:
+            p+=1
+        print("Points of Computer =",c,"Points of User =", p)
+    elif (player == "paper"):
+        if (computer == "scissors"):
+            c+=1
+        else:
+            p+=1
+        print("Points of Computer =", c, "Points of User =", p)
+    elif (player == "scissors"):
+        if (computer == "stone"):
+            c+=1
+        else:
+            p+=1
+        print("Points of Computer =", c, "Points of User =", p)
+    else:
+        print("Wrong Choice")
+    if((c==pt)or(p==pt)):
+        break
+if(c==pt):
+    print("Sad!! Computer wins")
+elif(p==pt):
+    print("Congrats!!! Player wins")
